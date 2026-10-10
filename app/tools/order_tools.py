@@ -1,9 +1,7 @@
 from app.db.database import SessionLocal
 from app.repositories.order_repository import OrderRepository
 from app.services.order_service import OrderService
-from langchain_core.tools import tool
 
-@tool
 def get_customer_orders(user_id: int) -> list[dict]:
     """
     Retrieve all orders belonging to a specific customer.
@@ -21,7 +19,7 @@ def get_customer_orders(user_id: int) -> list[dict]:
 
     finally:
         session.close()
-@tool
+
 def get_active_orders(user_id: int) -> list[dict]:
     """
     Retreive active orders belonging to specific customer.
